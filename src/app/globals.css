@@ -1,0 +1,256 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --placeholder-color: #a1a1a1; /* Cambia el color de los placeholders aquí */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --placeholder-color: #c7c7c7; /* Cambia el color de los placeholders en modo oscuro */
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+form {
+  margin: 0 auto;
+  padding: 16px;
+  background: var(--background);
+  border: 1px solid var(--foreground);
+  border-radius: 8px;
+}
+
+form input,
+form textarea,
+form button {
+  width: calc(100% - 16px);
+  margin: 8px 8px;
+  padding: 8px;
+  border: 1px solid var(--foreground);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: var(--placeholder-color);
+  opacity: 1; /* Asegúrate de que no se aplique opacidad */
+}
+
+form button {
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background: #0056b3;
+}
+
+ul {
+  margin: 20px auto;
+  padding: 0;
+  max-width: 600px;
+  list-style: none;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: var(--background);
+  border: 1px solid var(--foreground);
+  border-radius: 8px;
+}
+
+ul li button {
+  margin-left: 8px;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background: #dc3545;
+  color: white;
+  cursor: pointer;
+}
+
+ul li button:hover {
+  background: #b21f2d;
+}
+
+ul li button:first-child {
+  background: #007bff;
+}
+
+ul li button:first-child:hover {
+  background: #0056b3;
+}
+
+/* CSS MODAL */
+
+/* Overlay del modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo negro translúcido */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+/* Contenedor del modal */
+.modal-container {
+  background-color: #ffffff; /* Fondo blanco */
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Botón para cerrar el modal */
+.modal-close-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 1.5rem;
+  color: #6c757d; /* Gris */
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.modal-close-button:hover {
+  color: #dc3545; /* Rojo */
+}
+
+/* Título del modal */
+.modal-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #212529; /* Gris oscuro */
+  text-align: left;
+}
+
+/* Contenido del modal */
+.modal-content {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Botones del modal */
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.modal-button.cancel {
+  background-color: #f8f9fa; /* Gris claro */
+  color: #6c757d; /* Gris */
+}
+
+.modal-button.cancel:hover {
+  background-color: #e2e6ea;
+}
+
+.modal-button.save {
+  background-color: #007bff; /* Azul */
+  color: white;
+}
+
+.modal-button.save:hover {
+  background-color: #0056b3;
+}
+
+/* CSS PRODUCTFORM */
+
+/* Formulario */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Campos de entrada */
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #171717;
+  background-color: #ffffff;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Botón del formulario */
+.form-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

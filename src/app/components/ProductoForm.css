@@ -1,0 +1,75 @@
+/* Formulario */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 8px;
+    max-width: 500px; /* Ajusta la proporción */
+    min-height: 00px; /* Aumenta el largo del formulario */
+  }
+  
+  /* Etiquetas de los campos */
+  .modal-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151; /* Texto gris oscuro */
+    margin-bottom: 4px;
+  }
+  
+  /* Campos de entrada */
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #d1d5db; /* Borde gris claro */
+    border-radius: 6px;
+    outline: none;
+    color: #111827; /* Texto gris oscuro */
+    background-color: #f9fafb; /* Fondo gris claro */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  .form-input:focus,
+  .form-textarea:focus {
+    border-color: #2563eb; /* Azul */
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.5); /* Sombra azul */
+  }
+  
+  /* Botones */
+  .modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+  
+  .modal-button {
+    padding: 10px 16px;
+    font-size: 1px;
+    font-weight: 500;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+  
+  .modal-button.cancel {
+    background-color: #f3f4f6; /* Gris claro */
+    color: #374151; /* Gris oscuro */
+  }
+  
+  .modal-button.cancel:hover {
+    background-color: #e5e7eb; /* Gris más claro */
+  }
+  
+  .modal-button.save {
+    background-color: #2563eb; /* Azul */
+    color: white;
+  }
+  
+  .modal-button.save:hover {
+    background-color: #1d4ed8; /* Azul más oscuro */
+  }
+  
