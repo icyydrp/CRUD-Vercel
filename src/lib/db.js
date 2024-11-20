@@ -5,7 +5,7 @@ const db = mysql.createPool({
   user: process.env.DB_USER || 'root', // Usuario de la base de datos
   password: process.env.DB_PASSWORD || 'vEDebKsTQxnXjqYsAYIsGrdvxQLclNAa', // Reemplaza <tu-password> por la contraseña
   database: process.env.DB_NAME || 'railway', // Nombre de la base de datos
-  port: process.env.DB_PORT || 53728, // Puerto de la base de datos
+  port: process.env.DB_PORT || 31400, // Puerto de la base de datos
 });
 
 export default db;
